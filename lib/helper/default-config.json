@@ -1,0 +1,19 @@
+{
+  "releaseTypes": {
+    "major": [
+      ":boom:"
+    ],
+    "premajor": [ ],
+    "minor": [
+      ":sparkles:"
+    ],
+    "preminor": [ ],
+    "patch": [
+      ":bug:",
+      ":ambulance:",
+      ":lock:"
+    ],
+    "prepatch": [ ],
+    "prerelease": [ ]
+  }
+}

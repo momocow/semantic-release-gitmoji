@@ -1,0 +1,9 @@
+[
+  "prerelease",
+  "prepatch",
+  "patch",
+  "preminor",
+  "minor",
+  "premajor",
+  "major"
+]
