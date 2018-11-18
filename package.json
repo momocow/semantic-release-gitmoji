@@ -37,7 +37,9 @@
     "gitmoji-cli": "^1.9.2"
   },
   "dependencies": {
+    "dateformat": "^3.0.3",
     "debug": "^4.1.0",
+    "handlebars": "^4.0.12",
     "lodash.clonedeep": "^4.5.0",
     "lodash.last": "^3.0.0",
     "lodash.mergewith": "^4.6.1",

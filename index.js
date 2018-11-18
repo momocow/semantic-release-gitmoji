@@ -1,4 +1,4 @@
 module.exports = {
-  analyzeCommits: require('./lib/analyzeCommits'),
-  generateNotes: require('./lib/generateNotes')
+  analyzeCommits: require('./lib/analyze-commits'),
+  generateNotes: require('./lib/generate-notes')
 }
