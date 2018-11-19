@@ -15,5 +15,11 @@
     ],
     "prepatch": [ ],
     "prerelease": [ ]
+  },
+  "releaseNotes": {
+    "template": "default-template.hbs",
+    "partials": {
+      "commitTemplate": "commit-template.hbs"
+    }
   }
 }

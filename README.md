@@ -1,6 +1,7 @@
 # semantic-release-gitmoji
+A [semantic-release](https://github.com/semantic-release/semantic-release) plugin for gitmojis ✨🐛💥
 
-Different from conventional changelog, Gitmoji commits are used to determine a release type and generate release notes.
+Different from [conventional changelog](https://github.com/conventional-changelog/conventional-changelog), [Gitmoji](https://github.com/carloscuesta/gitmoji) commits are used to **determine a release type** and **generate release notes**.
 
 | Step             | Description                                                                                                                  |
 |------------------|------------------------------------------------------------------------------------------------------------------------------|
