@@ -1,0 +1,13 @@
+language: node_js
+node_js: 8
+
+script:
+  - npm run lint
+  - npm test
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: npm run release
+  on:
+    branch: master
