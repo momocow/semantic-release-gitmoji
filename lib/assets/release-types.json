@@ -1,9 +1,9 @@
 [
-  "prerelease",
-  "prepatch",
-  "patch",
-  "preminor",
-  "minor",
+  "major",
   "premajor",
-  "major"
+  "minor",
+  "preminor",
+  "patch",
+  "prepatch",
+  "prerelease"
 ]
