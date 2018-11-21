@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-gitmoji",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Different from conventional changelog, Gitmoji commits are used to determine a release type and generate release notes.",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/momocow/semantic-release-gitmoji#readme",
   "devDependencies": {
+    "@semantic-release/git": "^7.0.5",
     "@semantic-release/github": "^5.2.1",
     "@semantic-release/npm": "^5.1.1",
     "ava": "^1.0.0-rc.2",
