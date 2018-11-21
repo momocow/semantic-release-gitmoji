@@ -1,0 +1,12 @@
+{
+  "options": {
+    "repositoryUrl": "git+https://github.com/momocow/semantic-release-gitmoji.git"
+  },
+  "lastRelease": {
+    "version": "0.0.0",
+    "gitHead": "<gitHead>",
+    "gitTag": "v0.0.0"
+  },
+  "commits": [
+  ]
+}
