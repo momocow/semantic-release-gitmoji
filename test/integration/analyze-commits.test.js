@@ -1,7 +1,19 @@
 const test = require('ava')
+const sinon = require('sinon')
+
 const { analyzeCommits } = require('../..')
 const ReleaseNotes = require('../../lib/release-notes')
 const getContext = require('./fixtures/contexts')
+
+const stub = sinon.stub(ReleaseNotes, 'get')
+// to avoid singleton for tests
+stub.callsFake(function (...args) {
+  return new ReleaseNotes(...args)
+})
+
+test.after(function () {
+  stub.restore()
+})
 
 const CASES = [
   {
@@ -33,7 +45,6 @@ const CASES = [
 async function macro (t, { pluginConfig, context, expectedRelease }) {
   context.logger.log = t.log
   t.is(await analyzeCommits(pluginConfig, context), expectedRelease)
-  ReleaseNotes.clear()
 }
 
 macro.title = function title (t, { name }) {

@@ -1,6 +1,6 @@
 {
   "commit": {
-    "short": "<commit_short>"
+    "short": "commit_short"
   },
   "message": ":boom: Introduce a breaking change",
   "subject": ":boom: Introduce a breaking change",

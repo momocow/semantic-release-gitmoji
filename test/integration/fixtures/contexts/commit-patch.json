@@ -1,6 +1,6 @@
 {
   "commit": {
-    "short": "<commit_short>"
+    "short": "commit_short"
   },
   "message": ":bug: Fix bugs",
   "subject": ":bug: Fix bugs",

@@ -4,8 +4,11 @@
   },
   "lastRelease": {
     "version": "0.0.0",
-    "gitHead": "<gitHead>",
+    "gitHead": "gitHead",
     "gitTag": "v0.0.0"
+  },
+  "nextRelease": {
+    "gitHead": "gitHead"
   },
   "commits": [
   ]

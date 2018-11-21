@@ -1,6 +1,6 @@
 {
   "commit": {
-    "short": "<commit_short>"
+    "short": "commit_short"
   },
   "message": ":memo: Update README\n\n#1 #2\n",
   "subject": ":memo: Update README",
