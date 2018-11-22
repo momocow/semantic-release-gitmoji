@@ -15,7 +15,7 @@
     "@semantic-release/npm",
     [
       "@semantic-release/git", {
-        "message": ":bookmark: ${nextRelease.version} [skip ci]\n\nhttps://github.com/momocow/semantic-release-gitmoji/releases/tag/${nextRelease.gitTag}"
+        "message": ":bookmark: v${nextRelease.version} [skip ci]\n\nhttps://github.com/momocow/semantic-release-gitmoji/releases/tag/${nextRelease.gitTag}"
       }
     ]
   ]
