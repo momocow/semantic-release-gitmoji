@@ -20,7 +20,7 @@ Different from [conventional changelog](https://github.com/conventional-changelo
     - [ReleaseRules](#releaserules)
       - [Emoji](#emoji)
     - [ReleaseNotesOptions](#releasenotesoptions)
-      - [FileSource](#filesource)
+      - [TemplateContent](#templatecontent)
   - [Templates](#templates)
     - [Context](#context)
     - [CommitContext](#commitcontext)
@@ -139,8 +139,8 @@ There are four variables that can be used in `issueResolution.template`:
 
 ```ts
 interface ReleaseNotesOptions {
-  template?: FileSource
-  partials?: Record<string, FileSource>
+  template?: TemplateContent
+  partials?: Record<string, TemplateContent>
   issueResolution?: {
     template?: string
     baseUrl?: string
@@ -149,9 +149,9 @@ interface ReleaseNotesOptions {
 }
 ```
 
-#### FileSource
+#### TemplateContent
 ```ts
-type FileSource = string | Buffer | Promise<string> | Promise<Buffer>
+type TemplateContent = string | Buffer | Promise<string> | Promise<Buffer>
 ```
 
 ## Templates
