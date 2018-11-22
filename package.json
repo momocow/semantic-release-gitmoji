@@ -7,7 +7,7 @@
     "release": "semantic-release",
     "commit": "gitmoji -c",
     "lint": "eslint ./index.js ./lib/**/*.js",
-    "init": "npm link ../semantic-release-gitmoji",
+    "link": "npm link ../semantic-release-gitmoji --no-save",
     "test": "ava test/**/*.test.js"
   },
   "repository": {
