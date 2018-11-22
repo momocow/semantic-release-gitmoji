@@ -1,5 +1,6 @@
 const test = require('ava')
 const sinon = require('sinon')
+const dateFormat = require('dateformat')
 
 const { generateNotes } = require('../..')
 const ReleaseNotes = require('../../lib/release-notes')
@@ -8,8 +9,11 @@ const getContext = require('./fixtures/contexts')
 const { readFileSync } = require('fs')
 const path = require('path')
 
+const now = new Date()
+
 function readNotesSync (name) {
   return readFileSync(path.join(__dirname, 'fixtures', 'notes', `notes-${name}.md`), 'utf8')
+    .replace(/\{datetime\}/g, dateFormat(now, 'yyyy-mm-dd'))
 }
 
 const stub = sinon.stub(ReleaseNotes, 'get')
@@ -58,6 +62,17 @@ const CASES = [
       }
     }),
     expectedNotes: readNotesSync('major')
+  },
+  {
+    name: 'default config + WIP context w/ minor updates',
+    pluginConfig: {},
+    context: getContext('wip', {
+      nextRelease: {
+        version: '1.0.0',
+        gitTag: 'v1.0.0'
+      }
+    }),
+    expectedNotes: readNotesSync('wip')
   }
 ]
 

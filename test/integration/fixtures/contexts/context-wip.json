@@ -1,0 +1,79 @@
+{
+  "options": {
+    "repositoryUrl": "git+https://github.com/momocow/semantic-release-gitmoji.git"
+  },
+  "lastRelease": {
+    "version": "0.0.0",
+    "gitHead": "gitHead",
+    "gitTag": "v0.0.0"
+  },
+  "nextRelease": {
+    "gitHead": "gitHead"
+  },
+  "commits": [
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":sparkles: Add a new feature\n\n#2",
+      "subject": ":sparkles: Add a new feature",
+      "body": "#2"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":construction: Work in progress\n\n#2",
+      "subject": ":construction: Work in progress",
+      "body": "#2"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":construction: Work in progress\n\n#2",
+      "subject": ":construction: Work in progress",
+      "body": "#2"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":construction: Work in progress\n\n#2",
+      "subject": ":construction: Work in progress",
+      "body": "#2"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":sparkles: Add a new feature\n\n#1",
+      "subject": ":sparkles: Add a new feature",
+      "body": "#1"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":construction: Work in progress\n\n#1",
+      "subject": ":construction: Work in progress",
+      "body": "#1"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":construction: Work in progress\n\n#1",
+      "subject": ":construction: Work in progress",
+      "body": "#1"
+    },
+    {
+      "commit": {
+        "short": "commit_short"
+      },
+      "message": ":construction: Work in progress\n\n#1",
+      "subject": ":construction: Work in progress",
+      "body": "#1"
+    }
+  ]
+}
