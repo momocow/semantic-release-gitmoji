@@ -73,6 +73,27 @@ const CASES = [
       }
     }),
     expectedNotes: readNotesSync('wip')
+  },
+  {
+    name: 'custom helper config + common context w/ patch updates',
+    pluginConfig: {
+      releaseNotes: {
+        template: '{{capitalize "cUSTOM"}} Helpers',
+        helpers: {
+          capitalize: function (str = '') {
+            return str.length > 0 ? str[0].toUpperCase() + str.slice(1).toLowerCase() : str
+          }
+        }
+      }
+    },
+    context: getContext('common', {
+      commits: { boring: 2, patch: 4 },
+      nextRelease: {
+        version: '0.0.1',
+        gitTag: 'v0.0.1'
+      }
+    }),
+    expectedNotes: readNotesSync('custom-helper')
   }
 ]
 
