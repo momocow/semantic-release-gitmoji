@@ -45,6 +45,7 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
 // in ".releaserc.js" or "release.config.js"
 
 const { promisify } = require('util')
+const dateFormat = require('dateformat')
 const readFileAsync = promisify(require('fs').readFile)
 
 // Given a `const` variable `TEMPLATE_DIR` which points to "<semantic-release-gitmoji>/lib/assets/templates"
@@ -69,6 +70,11 @@ module.exports = {
         releaseNotes: {
           template,
           partials: { commitTemplate },
+          helpers: {
+            datetime: function (format = 'UTC:yyyy-mm-dd') {
+              return dateFormat(new Date(), format)
+            }
+          }
           issueResolution: {
             template: '{baseUrl}/{owner}/{repo}/issues/{ref}',
             baseUrl: 'https://github.com',
@@ -136,6 +142,8 @@ All templates file are compiled and renderered by [`handlebars`](http://handleba
 
 `partials` is a map from the partial name to the content of the partial template.
 
+`helpers` is a map from the helper name to the helper function. There is already a default helper `datetime` which is a formatted current timestamp. You can provide helpers with the same names to override default helpers.
+
 `issueResolution` defines how issues are resolved to. The default and the only supported source currently is `github.com`, or you can provide your own `issueResolution.template` to override the default resolution to GitHub.
 
 There are four variables that can be used in `issueResolution.template`:
@@ -148,6 +156,7 @@ There are four variables that can be used in `issueResolution.template`:
 interface ReleaseNotesOptions {
   template?: TemplateContent
   partials?: Record<string, TemplateContent>
+  helpers?: Record<string, Function>
   issueResolution?: {
     template?: string
     baseUrl?: string
