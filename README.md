@@ -14,6 +14,7 @@ Different from [conventional changelog](https://github.com/conventional-changelo
 | `generateNotes`  | Generate release notes for the commits added since the last release with [Gitmoji](https://github.com/carloscuesta/gitmoji). |
 
 - [semantic-release-gitmoji](#semantic-release-gitmoji)
+  - [Features](#features)
   - [Install](#install)
   - [Usage](#usage)
   - [Configuration](#configuration)
@@ -25,6 +26,12 @@ Different from [conventional changelog](https://github.com/conventional-changelo
     - [Context](#context)
     - [CommitContext](#commitcontext)
     - [IssueLink](#issuelink)
+  - [Progressive commits](#progressive-commits)
+    - [Commit Syntax](#commit-syntax)
+
+## Features
+- Categorize commits according to Gitmojis
+- Progressive commits composed of a final commit and several WIP (🚧) commits
 
 ## Install
 ```
@@ -199,6 +206,7 @@ interface CommitContext extends SemanticReleaseCommitObj {
   source: string
   gitmoji: string
   issues: Array<IssueLink>
+  wip: Array<CommitContext>
 }
 ```
 
@@ -209,3 +217,75 @@ interface IssueLink {
   link: string
 }
 ```
+
+## Progressive commits
+Assume you file an issue (e.g. `#1`) to implement a new feature, then you make 3 commits as belows (the toppest is the latest).
+- `✨ Add a new feature.\n\n#1`
+- `🚧 Implement part B.\n\n#1`
+- `🚧 Implement part A.\n\n#1`
+
+The ✨ commit will be the final commit composed of two 🚧 commits. They are linked together via `#1` in the commit message.
+
+Therefore the `commits` of the [template context](#context) will be as follows.
+```json
+{
+  "commits": {
+
+    "sparkles": [
+      {
+        "message": "Add a new feature.\n\n#1",
+        "subject": "Add a new feature.",
+        "body": "#1",
+        "gitmoji": "✨",
+        "// repo": "",
+        "// owner": "",
+        "source": "github.com",
+        "issues": [{
+          "text": "#1",
+          "// link": ""
+        }],
+
+        "wip": [
+          {
+            "message": "Implement part B.\n\n#1",
+            "subject": "Implement part B.",
+            "body": "#1",
+            "gitmoji": "🚧",
+            "// repo": "",
+            "// owner": "",
+            "source": "github.com",
+            "issues": [{
+              "text": "#1",
+              "// link": ""
+            }]
+          },
+          {
+            "message": "Implement part A.\n\n#1",
+            "subject": "Implement part A.",
+            "body": "#1",
+            "gitmoji": "🚧",
+            "// repo": "",
+            "// owner": "",
+            "source": "github.com",
+            "issues": [{
+              "text": "#1",
+              "// link": ""
+            }]
+          }
+        ]
+      }
+    ],
+
+    "// other gitmojis": ""
+  }
+}
+```
+### Commit Syntax
+Beside using issue number to link commits, the following syntax is also available to link commits together.
+```
+wip#{target_name}
+```
+
+While `target_name` is an identifier for those progressive commits, for example, `wip#feature-A`.
+- `target_name` can contain **numbers**, **letters** (both cases), `_` or `-`.
+- `target_name` should not start with `_` or `-`.
