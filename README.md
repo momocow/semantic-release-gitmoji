@@ -20,6 +20,7 @@ Different from [conventional changelog](https://github.com/conventional-changelo
   - [Configuration](#configuration)
     - [ReleaseRules](#releaserules)
       - [Emoji](#emoji)
+      - [EmojiArrayModifier](#emojiarraymodifier)
     - [ReleaseNotesOptions](#releasenotesoptions)
       - [TemplateContent](#templatecontent)
   - [Templates](#templates)
@@ -128,6 +129,8 @@ interface ReleaseRules {
 type Emoji = string
 ```
 
+#### EmojiArrayModifier
+
 ```ts
 interface EmojiArrayModifier {
   include?: Array<Emoji>
@@ -142,7 +145,9 @@ All templates file are compiled and renderered by [`handlebars`](http://handleba
 
 `partials` is a map from the partial name to the content of the partial template.
 
-`helpers` is a map from the helper name to the helper function. There is already a default helper `datetime` which is a formatted current timestamp. You can provide helpers with the same names to override default helpers.
+`helpers` is a map from the helper name to the helper function. There is already a default helper `datetime` which takes a format string as the first argument and return a formatted current timestamp. See [npm/dateformat](https://www.npmjs.com/package/dateformat) for more information about how to format a timestamp and see [the default template](https://github.com/momocow/semantic-release-gitmoji/blob/master/lib/assets/templates/default-template.hbs#L2) as an example.
+
+Besides, You are allowed to provide helpers with the same names to override default helpers.
 
 `issueResolution` defines how issues are resolved to. The default and the only supported source currently is `github.com`, or you can provide your own `issueResolution.template` to override the default resolution to GitHub.
 
