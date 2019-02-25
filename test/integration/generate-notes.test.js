@@ -13,7 +13,7 @@ const now = new Date()
 
 function readNotesSync (name) {
   return readFileSync(path.join(__dirname, 'fixtures', 'notes', `notes-${name}.md`), 'utf8')
-    .replace(/\{datetime\}/g, dateFormat(now, 'yyyy-mm-dd'))
+    .replace(/\{datetime\}/g, dateFormat(now, 'UTC:yyyy-mm-dd'))
 }
 
 const stub = sinon.stub(ReleaseNotes, 'get')
