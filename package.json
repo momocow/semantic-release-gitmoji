@@ -58,6 +58,9 @@
     "lodash.uniq": "^4.5.0",
     "node-emoji": "^1.8.1"
   },
+  "peerDependencies": {
+    "semantic-release": "^15.0.0"
+  },
   "ava": {
     "babel": false,
     "compileEnhancements": false
