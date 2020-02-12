@@ -310,6 +310,7 @@ PRs are welcome.
 
 Before sending PRs, please follow the steps below.
 - Fork the branch `dev`.
+- Make commits.
 - Run `npm run lint` and ensure you pass the linter.
 - Run `npm test` and ensure nothing broken.
   - If you introduce new features in the PR, ensure tests have been written for each feature.
