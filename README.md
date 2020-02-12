@@ -29,6 +29,7 @@ Different from [conventional changelog](https://github.com/conventional-changelo
     - [IssueLink](#issuelink)
   - [Progressive commits](#progressive-commits)
     - [Commit Syntax](#commit-syntax)
+  - [Contribution](#contribution)
 
 ## Features
 - Categorize commits according to Gitmojis
@@ -303,3 +304,16 @@ wip#{target_name}
 While `target_name` is an identifier for those progressive commits, for example, `wip#feature-A`.
 - `target_name` can contain **numbers**, **letters** (both cases), `_` or `-`.
 - `target_name` should not start with `_` or `-`.
+
+## Contribution
+PRs are welcome.
+
+Before sending PRs, please follow the steps below.
+- Fork the branch `dev`.
+- Make commits.
+- Run `npm run lint` and ensure you pass the linter.
+- Run `npm test` and ensure nothing broken.
+  - If you introduce new features in the PR, ensure tests have been written for each feature.
+- Send your PR to branch `dev` and wait for reviews.
+
+Thanks for all lovers and contributers of this project!
