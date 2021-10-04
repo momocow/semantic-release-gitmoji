@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-gitmoji",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "Different from conventional changelog, Gitmoji commits are used to determine a release type and generate release notes.",
   "main": "index.js",
   "scripts": {
@@ -56,7 +56,8 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.mergewith": "^4.6.2",
     "lodash.uniq": "^4.5.0",
-    "node-emoji": "^1.11.0"
+    "node-emoji": "^1.11.0",
+    "semantic-release-gitmoji": "file:"
   },
   "peerDependencies": {
     "semantic-release": "^17.0.0"
