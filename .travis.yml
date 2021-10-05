@@ -5,7 +5,7 @@ node_js:
   - 16
 
 install:
-  - npm ci
+  - npm install
   - npm run link
 
 script:
