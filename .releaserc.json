@@ -9,6 +9,9 @@
               ":arrow_up:"
             ]
           }
+        },
+        "releaseNotes": {
+          "template": "build/release-notes.hbs"
         }
       }
     ],
