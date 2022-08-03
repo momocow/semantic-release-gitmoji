@@ -41,7 +41,7 @@ npm install semantic-release-gitmoji -D
 ```
 
 ## Usage
-The plugin can be configured in the [**semantic-release** configuration file](https://github.com/semantic-release/semantic-release/blob/caribou/docs/usage/configuration.md#configuration):
+The plugin can be configured in the [**semantic-release** configuration file](https://semantic-release.gitbook.io/semantic-release/usage/configuration):
 
 ```js
 // in ".releaserc.js" or "release.config.js"
