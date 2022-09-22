@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-gitmoji",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Different from conventional changelog, Gitmoji commits are used to determine a release type and generate release notes.",
   "main": "index.js",
   "scripts": {
