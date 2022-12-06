@@ -80,7 +80,9 @@ module.exports = {
           issueResolution: {
             template: '{baseUrl}/{owner}/{repo}/issues/{ref}',
             baseUrl: 'https://github.com',
-            source: 'github.com'
+            source: 'github.com',
+            removeFromCommit: false,
+            regex: /#\d+/g
           }
         }
       }
@@ -152,11 +154,12 @@ Besides, You are allowed to provide helpers with the same names to override defa
 
 `issueResolution` defines how issues are resolved to. The default and the only supported source currently is `github.com`, or you can provide your own `issueResolution.template` to override the default resolution to GitHub.
 
-There are four variables that can be used in `issueResolution.template`:
+There are five variables that can be used in `issueResolution.template`:
 - `baseUrl`
 - `owner`
 - `repo`
 - `ref`, which is the numeric ID of issue
+- `issue`, which is the full issue
 
 ```ts
 interface ReleaseNotesOptions {
@@ -167,6 +170,8 @@ interface ReleaseNotesOptions {
     template?: string
     baseUrl?: string
     source?: 'github.com' | null // currently only GitHub is supported, PR welcome :)
+    regex?: RegExp, // regex to match the issue(s). If not provided, will find issues thanks to [issue-regex](https://www.npmjs.com/package/issue-regex)
+    removeFromCommit?: boolean // if true, will remove found issue(s) from commit name
   }
 }
 ```

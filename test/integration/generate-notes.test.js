@@ -94,6 +94,25 @@ const CASES = [
       }
     }),
     expectedNotes: readNotesSync('custom-helper')
+  },
+  {
+    name: 'default config + custom issueResolution',
+    pluginConfig: {
+      releaseNotes: {
+        issueResolution: {
+          removeFromCommit: true,
+          regex: /CUSTOM-\d{4}/g,
+          template: 'https://custom-url/{issue}'
+        }
+      }
+    },
+    context: getContext('custom', {
+      nextRelease: {
+        version: '0.1.0',
+        gitTag: 'v0.1.0'
+      }
+    }),
+    expectedNotes: readNotesSync('custom')
   }
 ]
 
