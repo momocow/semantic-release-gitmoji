@@ -1,0 +1,47 @@
+{
+  "options": {
+    "repositoryUrl": "git+https://github.com/momocow/semantic-release-gitmoji.git"
+  },
+  "lastRelease": {
+    "version": "0.0.0",
+    "gitHead": "gitHead",
+    "gitTag": "v0.0.0"
+  },
+  "nextRelease": {
+    "gitHead": "gitHead"
+  },
+  "commits": [
+    {
+      "commit": {
+        "short": "123456"
+      },
+      "message": "CUSTOM-4242 :sparkles: (scope1): use custom ticket regex",
+      "subject": "CUSTOM-4242 :sparkles: (scope1): use custom ticket regex",
+      "body": ""
+    },
+    {
+      "commit": {
+        "short": "654321"
+      },
+      "message": ":sparkles: (scope2): no ticket",
+      "subject": ":sparkles: (scope2): no ticket",
+      "body": ""
+    },
+    {
+      "commit": {
+        "short": "654456"
+      },
+      "message": ":bug: (scope3): with github issue #42",
+      "subject": ":bug: (scope3): with github issue #42",
+      "body": ""
+    },
+    {
+      "commit": {
+        "short": "123321"
+      },
+      "message": "CUSTOM-4242 CUSTOM-4243 :sparkles: (scope4): multiple issues",
+      "subject": "CUSTOM-4242 CUSTOM-4243 :sparkles: (scope4): multiple issues",
+      "body": ""
+    }
+  ]
+}
