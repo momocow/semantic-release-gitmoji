@@ -146,6 +146,8 @@ interface EmojiArrayModifier {
 
 All templates file are compiled and renderered by [`handlebars`](http://handlebarsjs.com/), therefore you may need to get familiar with the `.hbs` format before starting to customize your own templates.
 
+`semver` is a boolean to define if releaseNotes should be based on Gitmoji only or on key semver associated to gitmoji used in commit to determine the next release tag.
+
 `partials` is a map from the partial name to the content of the partial template.
 
 `helpers` is a map from the helper name to the helper function. There is already a default helper `datetime` which takes a format string as the first argument and return a formatted current timestamp. See [npm/dateformat](https://www.npmjs.com/package/dateformat) for more information about how to format a timestamp and see [the default template](https://github.com/momocow/semantic-release-gitmoji/blob/master/lib/assets/templates/default-template.hbs#L2) as an example.
@@ -164,6 +166,7 @@ There are five variables that can be used in `issueResolution.template`:
 ```ts
 interface ReleaseNotesOptions {
   template?: TemplateContent
+  semver?: Boolean
   partials?: Record<string, TemplateContent>
   helpers?: Record<string, Function>
   issueResolution?: {
