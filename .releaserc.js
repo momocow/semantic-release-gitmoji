@@ -10,7 +10,7 @@ module.exports = {
       {
         releaseRules: {
           patch: {
-            include: [':bento:', ':arrow_up:'],
+            include: [':bento:', ':arrow_up:', ':lock:'],
           },
         },
         releaseNotes: {
