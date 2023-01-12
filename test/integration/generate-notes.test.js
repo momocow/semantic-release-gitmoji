@@ -10,6 +10,8 @@ const { readFileSync } = require('fs')
 const path = require('path')
 
 const now = new Date()
+const templateDir = '../../lib/assets/templates'
+const template = readFileSync(path.join(__dirname, templateDir, 'default-template-semver.hbs'))
 
 function readNotesSync (name) {
   return readFileSync(path.join(__dirname, 'fixtures', 'notes', `notes-${name}.md`), 'utf8')
@@ -113,6 +115,94 @@ const CASES = [
       }
     }),
     expectedNotes: readNotesSync('custom')
+  },
+  {
+    name: 'default config + common context w/ patch updates using gitmoji semver',
+    pluginConfig: {
+      releaseNotes: {
+        semver: true,
+        template: template
+      }
+    },
+    context: getContext('common', {
+      commits: { boring: 2, patch: 4 },
+      nextRelease: {
+        version: '0.0.1',
+        gitTag: 'v0.0.1'
+      }
+    }),
+    expectedNotes: readNotesSync('patch-semver')
+  },
+  {
+    name: 'default config + common context w/ minor updates using gitmoji semver',
+    pluginConfig: {
+      releaseNotes: {
+        semver: true,
+        template
+      }
+    },
+    context: getContext('common', {
+      commits: { boring: 2, patch: 4, minor: 2 },
+      nextRelease: {
+        version: '0.1.0',
+        gitTag: 'v0.1.0'
+      }
+    }),
+    expectedNotes: readNotesSync('minor-semver')
+  },
+  {
+    name: 'default config + common context w/ major updates using gitmoji semver',
+    pluginConfig: {
+      releaseNotes: {
+        semver: true,
+        template
+      }
+    },
+    context: getContext('common', {
+      commits: { boring: 2, patch: 4, minor: 2, major: 1 },
+      nextRelease: {
+        version: '1.0.0',
+        gitTag: 'v1.0.0'
+      }
+    }),
+    expectedNotes: readNotesSync('major-semver')
+  },
+  {
+    name: 'default config + WIP context w/ minor updates using gitmoji semver',
+    pluginConfig: {
+      releaseNotes: {
+        semver: true,
+        template
+      }
+    },
+    context: getContext('wip', {
+      nextRelease: {
+        version: '1.0.0',
+        gitTag: 'v1.0.0'
+      }
+    }),
+    expectedNotes: readNotesSync('wip-semver')
+  },
+  {
+    name: 'default config + custom issueResolution using gitmoji semver',
+    pluginConfig: {
+      releaseNotes: {
+        semver: true,
+        template,
+        issueResolution: {
+          removeFromCommit: true,
+          regex: /CUSTOM-\d{4}/g,
+          template: 'https://custom-url/{issue}'
+        }
+      }
+    },
+    context: getContext('custom', {
+      nextRelease: {
+        version: '0.1.0',
+        gitTag: 'v0.1.0'
+      }
+    }),
+    expectedNotes: readNotesSync('custom-semver')
   }
 ]
 

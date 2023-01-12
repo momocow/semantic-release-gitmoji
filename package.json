@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-gitmoji",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "Different from conventional changelog, Gitmoji commits are used to determine a release type and generate release notes.",
   "main": "index.js",
   "scripts": {
@@ -41,6 +41,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-standard": "^4.0.1",
     "gitmoji-cli": "^6.2.0",
+    "gitmojis": "^3.13.1",
     "lodash.set": "^4.3.2",
     "lodash.shuffle": "^4.2.0",
     "semantic-release": "^19.0.2",
