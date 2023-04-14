@@ -4,6 +4,9 @@ const fs = require('fs')
 const tplFile = path.resolve(__dirname, 'build/release-notes.hbs')
 
 module.exports = {
+  branches: [
+    "main",
+  ],
   plugins: [
     [
       'semantic-release-gitmoji',
