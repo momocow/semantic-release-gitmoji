@@ -32,7 +32,7 @@
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.7",
-    "@semantic-release/npm": "^9.0.2",
+    "@semantic-release/npm": "^10.0.3",
     "ava": "^4.3.3",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
@@ -40,10 +40,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-standard": "^4.0.1",
-    "gitmoji-cli": "^7.0.3",
+    "gitmoji-cli": "^8.1.1",
     "lodash.set": "^4.3.2",
     "lodash.shuffle": "^4.2.0",
-    "semantic-release": "^20.1.0",
+    "semantic-release": "^21.0.0",
     "sinon": "^8.1.1"
   },
   "dependencies": {
@@ -60,7 +60,7 @@
     "node-emoji": "^1.11.0"
   },
   "peerDependencies": {
-    "semantic-release": "<21"
+    "semantic-release": "<22"
   },
   "files": [
     "lib",
