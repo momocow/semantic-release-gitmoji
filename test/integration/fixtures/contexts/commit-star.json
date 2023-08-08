@@ -1,0 +1,8 @@
+{
+  "commit": {
+    "short": "commit_short"
+  },
+  "message": "*Commit starting with star",
+  "subject": "*Commit starting with star",
+  "body": ""
+}

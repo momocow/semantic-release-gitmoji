@@ -71,6 +71,14 @@ const CASES = [
     },
     context: getContext('common', { commits: { boring: 2, patch: 4, minor: 2, major: 1 } }),
     expectedRelease: 'major'
+  },
+  {
+    name: 'default config + common context w/ star in commit subject',
+    pluginConfig: {
+      semver: true
+    },
+    context: getContext('common', { commits: { star: 1 } }),
+    expectedRelease: undefined
   }
 ]
 
