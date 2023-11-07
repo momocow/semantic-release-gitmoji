@@ -15,35 +15,56 @@ test.after(function () {
   stub.restore()
 })
 
+const commitUrlTemplate = 'https://{source}/{owner}/{repo}/commit/{commit}';
+
 const CASES = [
   {
     name: 'default config + common context w/o updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', { commits: { boring: 2 } }),
     expectedRelease: undefined
   },
   {
     name: 'default config + common context w/ patch updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', { commits: { boring: 2, patch: 4 } }),
     expectedRelease: 'patch'
   },
   {
     name: 'default config + common context w/ minor updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', { commits: { boring: 2, patch: 4, minor: 2 } }),
     expectedRelease: 'minor'
   },
   {
     name: 'default config + common context w/ major updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', { commits: { boring: 2, patch: 4, minor: 2, major: 1 } }),
     expectedRelease: 'major'
   },
   {
     name: 'default config + common context w/o updates using gitmoji semver',
     pluginConfig: {
-      semver: true
+      semver: true,
+      releaseNotes: {
+        commitUrlTemplate
+      }
     },
     context: getContext('common', { commits: { boring: 2 } }),
     expectedRelease: undefined
@@ -51,7 +72,10 @@ const CASES = [
   {
     name: 'default config + common context w/ patch updates using gitmoji semver',
     pluginConfig: {
-      semver: true
+      semver: true,
+      releaseNotes: {
+        commitUrlTemplate
+      }
     },
     context: getContext('common', { commits: { boring: 2, patch: 4 } }),
     expectedRelease: 'patch'
@@ -59,7 +83,10 @@ const CASES = [
   {
     name: 'default config + common context w/ minor updates using gitmoji semver',
     pluginConfig: {
-      semver: true
+      semver: true,
+      releaseNotes: {
+        commitUrlTemplate
+      }
     },
     context: getContext('common', { commits: { boring: 2, patch: 4, minor: 2 } }),
     expectedRelease: 'minor'
@@ -67,7 +94,10 @@ const CASES = [
   {
     name: 'default config + common context w/ major updates using gitmoji semver',
     pluginConfig: {
-      semver: true
+      semver: true,
+      releaseNotes: {
+        commitUrlTemplate
+      }
     },
     context: getContext('common', { commits: { boring: 2, patch: 4, minor: 2, major: 1 } }),
     expectedRelease: 'major'

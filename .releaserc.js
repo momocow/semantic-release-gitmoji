@@ -18,6 +18,14 @@ module.exports = {
         },
         releaseNotes: {
           template: fs.readFileSync(tplFile, 'utf-8'),
+          commitUrlTemplate: 'https://{source}/{owner}/{repo}/commit/{commit.commit.short}',
+        },
+        issueResolution: {
+          template: '{baseUrl}/{owner}/{repo}/issues/{ref}',
+          baseUrl: 'https://github.com',
+          source: 'github.com',
+          removeFromCommit: false,
+          regex: /#\d+/g
         }
       }
     ],

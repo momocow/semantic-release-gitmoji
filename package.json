@@ -8,7 +8,7 @@
     "commit": "gitmoji -c",
     "lint": "eslint ./index.js ./lib/**/*.js",
     "link": "npm link && npm link semantic-release-gitmoji",
-    "test": "ava test/**/*.test.js"
+    "test": "ava test/**/*.test.js --verbose"
   },
   "repository": {
     "type": "git",
