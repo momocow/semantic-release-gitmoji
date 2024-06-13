@@ -60,7 +60,7 @@
     "node-emoji": "^1.11.0"
   },
   "peerDependencies": {
-    "semantic-release": "<23"
+    "semantic-release": "<24"
   },
   "files": [
     "lib",
