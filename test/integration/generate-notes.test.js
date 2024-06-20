@@ -28,10 +28,16 @@ test.after(function () {
   stub.restore()
 })
 
+const commitUrlTemplate = 'https://{source}/{owner}/{repo}/commit/{commit}'
+
 const CASES = [
   {
     name: 'default config + common context w/ patch updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', {
       commits: { boring: 2, patch: 4 },
       nextRelease: {
@@ -43,7 +49,11 @@ const CASES = [
   },
   {
     name: 'default config + common context w/ minor updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', {
       commits: { boring: 2, patch: 4, minor: 2 },
       nextRelease: {
@@ -55,7 +65,11 @@ const CASES = [
   },
   {
     name: 'default config + common context w/ major updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('common', {
       commits: { boring: 2, patch: 4, minor: 2, major: 1 },
       nextRelease: {
@@ -67,7 +81,11 @@ const CASES = [
   },
   {
     name: 'default config + WIP context w/ minor updates',
-    pluginConfig: {},
+    pluginConfig: {
+      releaseNotes: {
+        commitUrlTemplate
+      }
+    },
     context: getContext('wip', {
       nextRelease: {
         version: '1.0.0',
@@ -81,6 +99,7 @@ const CASES = [
     pluginConfig: {
       releaseNotes: {
         template: '{{capitalize "cUSTOM"}} Helpers',
+        commitUrlTemplate,
         helpers: {
           capitalize: function (str = '') {
             return str.length > 0 ? str[0].toUpperCase() + str.slice(1).toLowerCase() : str
@@ -101,6 +120,7 @@ const CASES = [
     name: 'default config + custom issueResolution',
     pluginConfig: {
       releaseNotes: {
+        commitUrlTemplate,
         issueResolution: {
           removeFromCommit: true,
           regex: /CUSTOM-\d{4}/g,
@@ -121,6 +141,7 @@ const CASES = [
     pluginConfig: {
       releaseNotes: {
         semver: true,
+        commitUrlTemplate,
         template: template
       }
     },
@@ -138,6 +159,7 @@ const CASES = [
     pluginConfig: {
       releaseNotes: {
         semver: true,
+        commitUrlTemplate,
         template
       }
     },
@@ -155,6 +177,7 @@ const CASES = [
     pluginConfig: {
       releaseNotes: {
         semver: true,
+        commitUrlTemplate,
         template
       }
     },
@@ -172,6 +195,7 @@ const CASES = [
     pluginConfig: {
       releaseNotes: {
         semver: true,
+        commitUrlTemplate,
         template
       }
     },
@@ -188,6 +212,7 @@ const CASES = [
     pluginConfig: {
       releaseNotes: {
         semver: true,
+        commitUrlTemplate,
         template,
         issueResolution: {
           removeFromCommit: true,
