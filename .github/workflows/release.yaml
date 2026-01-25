@@ -6,6 +6,9 @@ on:
       - alpha
 
 permissions:
+  contents: write
+  issues: write
+  pull-requests: write
   id-token: write
 
 jobs:
@@ -25,7 +28,4 @@ jobs:
         run: npm ci
       - run: npm run link
       - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run release
