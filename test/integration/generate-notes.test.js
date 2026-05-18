@@ -1,9 +1,7 @@
 const test = require('ava')
-const sinon = require('sinon')
 const dateFormat = require('dateformat')
 
 const { generateNotes } = require('../..')
-const ReleaseNotes = require('../../lib/release-notes')
 const getContext = require('./fixtures/contexts')
 
 const { readFileSync } = require('fs')
@@ -17,16 +15,6 @@ function readNotesSync (name) {
   return readFileSync(path.join(__dirname, 'fixtures', 'notes', `notes-${name}.md`), 'utf8')
     .replace(/\{datetime\}/g, dateFormat(now, 'UTC:yyyy-mm-dd'))
 }
-
-const stub = sinon.stub(ReleaseNotes, 'get')
-// to avoid singleton for tests
-stub.callsFake(function (...args) {
-  return new ReleaseNotes(...args)
-})
-
-test.after(function () {
-  stub.restore()
-})
 
 const CASES = [
   {
